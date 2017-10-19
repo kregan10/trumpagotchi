@@ -1,0 +1,15 @@
+Trying to impeach trump:
+
+Ego:			"Give Compliment"	(lower ego, lower health)
+Fake news: 		"Denounce fake news"	(more fake news, lower health)
+Twitter:		"Delete tweet"		(higher twitter, lower health)
+
+//Presidential status (health):
+
+Impeach |--------------------------------------| In office
+
+impeach meter:
+Ego increases less likely to get impeached
+Fake news increases impeach goes up
+
+
