@@ -128,9 +128,9 @@ var Tamagotchi = {
   setTamagotchiMeters: function (intervalID) {
 
     if (this.isGolfing) {
-      $(".asleep-or-awake").html("<img src='./img/bird-asleep.png' class='tiny-photo-width'>")
+      $(".asleep-or-awake").html("<img src='./img/trump5.png' class='tiny-photo-width'>")
     } else {
-      $(".asleep-or-awake").html("<img src='./img/bird-awake.png' class='tiny-photo-width'>")
+      $(".asleep-or-awake").html("<img src='./img/trump3.png' class='tiny-photo-width'>")
     };
 
     $(".food-meter").html("<meter value=" + this.egoLevel + " min='-1' low='3' high='8' optimum='10' max='15'></meter>");
@@ -148,7 +148,7 @@ var Tamagotchi = {
       $(".alert").addClass("alert-danger");
       $(".alert-msg").text("Too late! Trump is IMPEACHED!");
       $(".show-message").html("<h6>&nbsp</h6><img class='flip-vertical photo-width' src='./img/char" + this.image + ".png' alt='Picture of character'>");
-      $(".asleep-or-awake").html("<img src='./img/bird-asleep.png' class='tiny-photo-width'>");
+      $(".asleep-or-awake").html("<img src='./img/trump5.png' class='tiny-photo-width'>");
       $("button#strokeEgo img").addClass("opaque")
       $("button#strokeEgo").off("click");
       $("button#denounceNews img").addClass("opaque")
