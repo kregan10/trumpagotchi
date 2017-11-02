@@ -1,6 +1,7 @@
 var Tamagotchi = {
 
   initialize: function (name, imageNumber, birthdate) {
+      var d = new Date();
     this.name = name;
     this.image = imageNumber;
     this.birthdate = birthdate;
@@ -10,6 +11,7 @@ var Tamagotchi = {
     this.restedLevel = 10;
     this.twitterLevel = 10;
     this.healthLevel = 10;
+    startTime = d.getTime();
   },
 
   calcHealthLevel: function () {
@@ -167,9 +169,10 @@ var Tamagotchi = {
     }
 
     if (!this.isAlive()) {
+        let endTime = new Date();
       $("#form-to-disappear").show();
       $(".alert").addClass("alert-danger");
-      $(".alert-msg").text("Too late! Trump is IMPEACHED!");
+      $(".alert-msg").text("Too late! Trump is IMPEACHED! You lasted " + Math.floor(((endTime.getTime() - startTime) /1000) /2) + " Months in office");
       $(".show-message").html("<h6>&nbsp</h6><img class='flip-vertical photo-width' src='./img/char" + this.image + ".png' alt='Picture of character'>");
       $(".asleep-or-awake").html("<img src='./img/trump5.png' class='tiny-photo-width'>");
       $("button#strokeEgo img").addClass("opaque")
