@@ -36,8 +36,8 @@ var Tamagotchi = {
   },
 
   deleteTweet: function () {
-    if (this.fakeNewsLevel < 15) {
-      this.fakeNewsLevel++;
+    if (this.twitterLevel < 15) {
+      this.twitterLevel++;
     };
   },
 
@@ -56,7 +56,7 @@ var Tamagotchi = {
 // State variable readers
 
   isAlive: function () {
-    if ((this.healthLevel < 2) || (this.egoLevel === 0)) {
+    if (this.healthLevel < 1) {
       return false;
     } else {
       return true;
@@ -103,7 +103,9 @@ var Tamagotchi = {
     if (this.isGolfing) {
       if (this.restedLevel < 15) {
         this.restedLevel++;
-      };
+    } else {
+            this.isGolfing = false;
+    }
       if (this.fakeNewsLevel > 0) {
         this.fakeNewsLevel--;
       };
@@ -118,7 +120,8 @@ var Tamagotchi = {
         this.fakeNewsLevel--;
       };
       if (this.twitterLevel > 0) {
-        this.fakeNewsLevel--;
+        this.twitterLevel--;
+        console.log("tweet level going down")
       };
     };
     this.healthLevel = this.calcHealthLevel();
@@ -143,6 +146,26 @@ var Tamagotchi = {
     $(".alert").removeClass("alert-warning");
     $(".alert-msg").text("");
 
+    if(this.healthLevel > 8)
+    {
+        $('#trumpPhoto').attr('src', './img/trumpHappy1.png')
+        console.log("greater than 8");
+    }
+    else if(this.healthLevel > 6)
+    {
+        $('#trumpPhoto').attr('src', './img/trump5.png')
+        console.log("greater than 5");
+    }
+    else if(this.healthLevel > 4)
+    {
+        $('#trumpPhoto').attr('src', './img/trump4.png')
+        console.log("greater than 3");
+    }
+    else
+    {
+        $('#trumpPhoto').attr('src', './img/trump6.png')
+    }
+
     if (!this.isAlive()) {
       $("#form-to-disappear").show();
       $(".alert").addClass("alert-danger");
@@ -164,10 +187,10 @@ var Tamagotchi = {
       $(".alert-msg").text("Trump is upset, stroke his ego!");
     } else if (this.fakeNewsLevelWarning()) {
       $(".alert").addClass("alert-warning");
-      $(".alert-msg").text("Your Tamagotchi is sad: denounceNews with it!");
+      $(".alert-msg").text("Trump is sad - Denounce Fake News!");
     } else if (this.restedLevelWarning()) {
       $(".alert").addClass("alert-warning");
-      $(".alert-msg").text("Your Tamagotchi is tired: Put it to bed!")
+      $(".alert-msg").text("Trump is tired - go golfing!")
     };
   }
 }; // end Tamagotchi
