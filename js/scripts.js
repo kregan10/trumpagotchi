@@ -123,7 +123,6 @@ var Tamagotchi = {
       };
       if (this.twitterLevel > 0) {
         this.twitterLevel--;
-        console.log("tweet level going down")
       };
     };
     this.healthLevel = this.calcHealthLevel();
@@ -151,17 +150,14 @@ var Tamagotchi = {
     if(this.healthLevel > 8)
     {
         $('#trumpPhoto').attr('src', './img/trumpHappy1.png')
-        console.log("greater than 8");
     }
     else if(this.healthLevel > 6)
     {
         $('#trumpPhoto').attr('src', './img/trump5.png')
-        console.log("greater than 5");
     }
     else if(this.healthLevel > 4)
     {
         $('#trumpPhoto').attr('src', './img/trump4.png')
-        console.log("greater than 3");
     }
     else
     {
