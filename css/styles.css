@@ -75,12 +75,25 @@
     box-shadow: 0px 6px 0px #2b638f, 0px 3px 15px rgba(0,0,0,.4), inset 0px 1px 0px rgba(255,255,255,.3), inset 0px 0px 3px rgba(255,255,255,.5);
 }
 
-h1, .show-message h5 {
+/*h1, .show-message h5 {
   text-align: center;
+    font-family: 'Fascinate Inline', cursive;
+
+} */
+h1{
+    text-align: center;
+    font-family: 'Fascinate Inline', cursive;
+    font-size: 100px;
 }
 
+h2{
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-align: center;
+}
 h2>span.tamagotchi-name {
   text-decoration: underline;
+    text-align: center;
+
 }
 
 h5 {
@@ -93,8 +106,11 @@ h6 {
 }
 
 meter {
-  height: 40px;
-  width: 75%;
+    width: 60%;
+    //margin-left: 130px;
+    height: 40px;
+  //width: 75%;
+   ;
 }
  
 input[type="range"] {

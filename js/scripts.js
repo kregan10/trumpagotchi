@@ -1,8 +1,16 @@
 difficulty = 450;
 var Tamagotchi = {
 
+<<<<<<< HEAD
   initialize: function () {
     var d = new Date();
+=======
+  initialize: function (name, imageNumber, birthdate) {
+      var d = new Date();
+    this.name = name;
+    this.image = imageNumber;
+    this.birthdate = birthdate;
+>>>>>>> 2f096081c0af006a36f16ada20682c775ba169bd
     this.isGolfing = false;
     this.egoLevel = 10;
     this.fakeNewsLevel = 10;
@@ -103,7 +111,9 @@ var Tamagotchi = {
     if (this.isGolfing) {
       if (this.restedLevel < 15) {
         this.restedLevel++;
-      };
+    } else {
+            this.isGolfing = false;
+    }
       if (this.fakeNewsLevel > 0) {
         console.log("fakeNews", this.fakeNewsLevel);
         this.fakeNewsLevel--;
@@ -133,9 +143,9 @@ var Tamagotchi = {
   setTamagotchiMeters: function (intervalID) {
 
     if (this.isGolfing) {
-      $(".asleep-or-awake").html("<img src='./img/bird-asleep.png' class='tiny-photo-width'>")
+      $(".asleep-or-awake").html("<img src='./img/trump5.png' class='tiny-photo-width'>")
     } else {
-      $(".asleep-or-awake").html("<img src='./img/bird-awake.png' class='tiny-photo-width'>")
+      $(".asleep-or-awake").html("<img src='./img/trump3.png' class='tiny-photo-width'>")
     };
 
     $(".ego-meter").html("<meter value=" + this.egoLevel + " min='-1' low='3' high='8' optimum='10' max='15'></meter>");
@@ -148,15 +158,37 @@ var Tamagotchi = {
     $(".alert").removeClass("alert-warning");
       $(".alert").hide();
 
+    if(this.healthLevel > 8)
+    {
+        $('#trumpPhoto').attr('src', './img/trumpHappy1.png')
+    }
+    else if(this.healthLevel > 6)
+    {
+        $('#trumpPhoto').attr('src', './img/trump5.png')
+    }
+    else if(this.healthLevel > 4)
+    {
+        $('#trumpPhoto').attr('src', './img/trump4.png')
+    }
+    else
+    {
+        $('#trumpPhoto').attr('src', './img/trump6.png')
+    }
+
     if (!this.isAlive()) {
+        let endTime = new Date();
       $("#form-to-disappear").show();
       $(".alert").show();
 
       $(".alert").addClass("alert-danger");
+<<<<<<< HEAD
       let endTime = new Date();
       $(".alert-msg").text("Too late! Trump is IMPEACHED! You lasted " + (Math.floor(((endTime.getTime() - startTime) /1000) /2)) + " Months in office");
+=======
+      $(".alert-msg").text("Too late! Trump is IMPEACHED! You lasted " + Math.floor(((endTime.getTime() - startTime) /1000) /2) + " Months in office");
+>>>>>>> 2f096081c0af006a36f16ada20682c775ba169bd
       $(".show-message").html("<h6>&nbsp</h6><img class='flip-vertical photo-width' src='./img/char" + this.image + ".png' alt='Picture of character'>");
-      $(".asleep-or-awake").html("<img src='./img/bird-asleep.png' class='tiny-photo-width'>");
+      $(".asleep-or-awake").html("<img src='./img/trump5.png' class='tiny-photo-width'>");
       $("button#strokeEgo img").addClass("opaque")
       $("button#strokeEgo").off("click");
       $("button#denounceNews img").addClass("opaque")
@@ -172,10 +204,17 @@ var Tamagotchi = {
       $(".alert-msg").text("Trump is upset, stroke his ego!");
     } else if (this.fakeNewsLevelWarning()) {
       $(".alert").addClass("alert-warning");
+<<<<<<< HEAD
       $(".alert-msg").text("FAKE NEWS! Denounce fake news!");
     } else if (this.restedLevelWarning()) {
       $(".alert").addClass("alert-warning");
       $(".alert-msg").text("Trump is tired, go golfing!")
+=======
+      $(".alert-msg").text("Trump is sad - Denounce Fake News!");
+    } else if (this.restedLevelWarning()) {
+      $(".alert").addClass("alert-warning");
+      $(".alert-msg").text("Trump is tired - go golfing!")
+>>>>>>> 2f096081c0af006a36f16ada20682c775ba169bd
     };
   }
 }; // end Tamagotchi
